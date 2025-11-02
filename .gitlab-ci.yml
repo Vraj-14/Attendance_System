@@ -1,0 +1,26 @@
+stages:
+  - test
+
+test_job:
+  image: node:20
+  stage: test
+  services:
+    - name: mysql:8.0
+      alias: db
+  variables:
+    # DB config for the MySQL service
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: attendance
+    DB_HOST: db
+    DB_USER: root
+    DB_PASSWORD: root
+    DB_NAME: attendance
+  script:
+    - echo "Installing dependencies..."
+    - npm ci || npm install
+    - echo "Waiting for MySQL to start..."
+    - sleep 20
+    - echo "Running DB test..."
+    - npm test
+  only:
+    - branches
