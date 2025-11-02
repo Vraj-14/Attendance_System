@@ -1,0 +1,27 @@
+{
+  "name": "attendance-system",
+  "version": "1.0.0",
+  "description": "Attendance Management System using Node.js, Express, and MySQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha test-db.js"
+  },
+  "keywords": [
+    "attendance",
+    "management",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "Vraj",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "mysql2": "^3.9.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.0.0"
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>📋 Attendance System</h1>
+
+    <!-- Form to submit attendance -->
+    <form id="attendanceForm">
+        <input type="text" id="student_name" placeholder="Student Name" required>
+        <label for="date">Date:</label>
+        <input type="date" id="date" title="Select a date" required>
+        <label for="time">Time:</label>
+        <input type="time" id="time" title="Select a time" required>
+        <label for="status">Attendance Status:</label>
+        <select id="status" required>
+            <option value="">Select Status</option>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <button type="submit">Submit Attendance</button>
+    </form>
+
+    <h3>Update Attendance</h3>
+        <input type="number" id="update-id" placeholder="ID to Update" required />
+        <input type="text" id="update-name" placeholder="New Name" required />
+        <label for="update-date">Update Date:</label>
+        <input type="date" id="update-date" title="Select a date to update" placeholder="Update Date" required />
+        <input type="time" id="update-time" title="Select a time to update" placeholder="Update Time" required />
+        <select id="update-status" title="Update Attendance Status" required>
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+        </select>
+        <button onclick="updateAttendance()">Update Attendance</button>
+
+        <h3>Delete Attendance</h3>
+        <input type="number" id="delete-id" placeholder="ID to Delete" required />
+        <button onclick="deleteAttendance()">Delete Attendance</button>
+
+
+
+    <hr>
+
+    <!-- Button to load records -->
+    <button onclick="fetchAttendance()">📄 Load Attendance Records</button>
+
+    <!-- Table to display records -->
+    <table id="recordsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
