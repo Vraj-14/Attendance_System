@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha test-db.js"
+    "test": "node test/test.js",
+    "test-db": "mocha test-db.js"
   },
   "keywords": [
     "attendance",
